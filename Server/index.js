@@ -5,6 +5,7 @@ import authRouter from "./Routes/auth.route.js"
 import cookieParser from "cookie-parser"
 dotenv.config()
 import cors from "cors"
+import userRouter from "./Routes/user.route.js"
 
 
 const app=express()
@@ -23,6 +24,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api/auth",authRouter)
+app.use("/api/user",userRouterRouter)
 const PORT=process.env.PORT
 app.listen(PORT,()=>{
     console.log(` Server started on Port ${PORT}`)
