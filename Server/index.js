@@ -24,7 +24,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api/auth",authRouter)
-app.use("/api/user",userRouterRouter)
+app.use("/api/user",userRouter)
 const PORT=process.env.PORT
 app.listen(PORT,()=>{
     console.log(` Server started on Port ${PORT}`)
