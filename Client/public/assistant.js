@@ -149,7 +149,7 @@
 
         button.className = `VocalIQ-btn theme-${assistantConfig.theme}`
 
-        const title = popup.querySelector(".shifra-title")
+        const title = popup.querySelector(".VocalIQ-title")
 
         title.innerHTML = `Hello! I'm ${assistantConfig.assistantName}`;
 
