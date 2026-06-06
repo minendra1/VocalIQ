@@ -60,7 +60,7 @@ function Billing({ user ,setUser}) {
           order.currency,
 
         name:
-          "ShifraAI",
+          "VocalIQ",
 
         description:
           "Pro Plan",
