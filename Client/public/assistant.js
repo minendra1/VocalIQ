@@ -307,7 +307,7 @@
                         setTimeout(()=>{
                             window.location.href = data.path
 
-                        },1500)
+                        },2500)
 
                     }else{
                         speak(data.aiResponse)
