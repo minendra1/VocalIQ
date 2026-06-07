@@ -1,0 +1,288 @@
+
+.theme-dark .vocaliq-mic,
+.theme-dark.vocaliq-btn
+{
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #4f8cff
+    );
+
+  /* Large premium glow */
+  box-shadow:
+    0 0 35px rgba(124,58,237,.55),
+    0 0 90px rgba(79,140,255,.38),
+    0 0 140px rgba(124,58,237,.22);
+
+}
+
+
+/* light theme */
+
+.theme-light{
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #eef6ff
+    );
+
+  border:1px solid #dbeafe;
+}
+
+.theme-light .vocaliq-overlay{
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(59,130,246,.12),
+      transparent 45%
+    );
+}
+
+.theme-light .vocaliq-orb,
+.theme-light .vocaliq-orb-glow{
+  background:
+    linear-gradient(
+      135deg,
+      #7dd3fc,
+      #67e8f9,
+      #f5d0fe
+    );
+}
+
+.theme-light .vocaliq-title{
+  color:#081028;
+}
+
+.theme-light .vocaliq-sub{
+  color:#475569;
+}
+
+.theme-light .vocaliq-status{
+  color:#3b82f6;
+}
+
+.theme-light .vocaliq-wave span{
+  background:#60a5fa;
+}
+
+.theme-light .vocaliq-user-text{
+  color:#081028;
+}
+
+.theme-light .vocaliq-ai-text{
+  color:#475569;
+}
+/* =========================
+   LIGHT THEME BUTTONS
+
+.theme-light .vocaliq-mic,
+.theme-light.vocaliq-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #60a5fa,
+      #06b6d4
+    );
+
+  /* Large soft glow */
+  box-shadow:
+    0 0 30px rgba(59,130,246,.38),
+    0 0 85px rgba(6,182,212,.28),
+    0 0 130px rgba(59,130,246,.16);
+
+}
+
+
+/* glass theme */
+
+.theme-glass{
+  background:
+    rgba(0,0,0,.28);
+
+  backdrop-filter:blur(45px);
+
+  -webkit-backdrop-filter:blur(45px);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.theme-glass .vocaliq-overlay{
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,.05),
+      
+    );
+}
+
+.theme-glass .vocaliq-orb,
+.theme-glass .vocaliq-orb-glow{
+  background:
+    linear-gradient(
+      135deg,
+      #bae6fd,
+      #c4b5fd,
+      #f5d0fe
+    );
+}
+
+.theme-glass .vocaliq-title{
+  color:white;
+}
+
+.theme-glass .vocaliq-sub{
+  color:rgba(255,255,255,.75);
+}
+
+.theme-glass .vocaliq-status{
+  color:#a5f3fc;
+}
+
+.theme-glass .vocaliq-wave span{
+  background:#a5f3fc;
+}
+
+.theme-glass .vocaliq-user-text{
+  color:white;
+}
+
+.theme-glass .vocaliq-ai-text{
+  color:rgba(255,255,255,.72);
+}
+/* =========================
+   GLASS THEME BUTTONS
+
+.theme-glass .vocaliq-mic,
+.theme-glass.vocaliq-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bff8a3,
+      #8a5cf6a8
+    );
+
+  /* Frosted neon glow */
+  box-shadow:
+    0 0 35px rgba(34,211,238,.34),
+    0 0 95px rgba(139,92,246,.28),
+    0 0 150px rgba(56,189,248,.18);
+
+}
+
+/* neon theme */
+
+
+.theme-neon{
+  background:#03120d;
+  border:1px solid rgba(16,185,129,.18);
+}
+
+.theme-neon .vocaliq-overlay{
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(16,185,129,.18),
+      transparent 45%
+    );
+}
+
+.theme-neon .vocaliq-orb,
+.theme-neon .vocaliq-orb-glow{
+  background:
+    linear-gradient(
+      135deg,
+      #34d399,
+      #10b981,
+      #14b8a6
+    );
+}
+
+.theme-neon .vocaliq-title{
+  color:#ecfdf5;
+}
+
+.theme-neon .vocaliq-sub{
+  color:rgba(209,250,229,.72);
+}
+
+.theme-neon .vocaliq-status{
+  color:#6ee7b7;
+}
+
+.theme-neon .vocaliq-wave span{
+  background:#6ee7b7;
+}
+
+.theme-neon .vocaliq-user-text{
+  color:#ecfdf5;
+}
+
+.theme-neon .vocaliq-ai-text{
+  color:rgba(209,250,229,.75);
+}
+
+/* =========================
+   NEON THEME BUTTONS
+
+.theme-neon .vocaliq-mic,
+.theme-neon.vocaliq-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #10b981,
+      #22c55e
+    );
+
+  /* Strong neon glow */
+  box-shadow:
+    0 0 38px rgba(16,185,129,.45),
+    0 0 100px rgba(34,197,94,.32),
+    0 0 160px rgba(16,185,129,.20);
+
+}
+
+
+
+@media(max-width:640px){
+  .vocaliq-popup{
+    width:340px;
+    min-width:340px;
+    max-width:340px;
+
+    height:560px;
+    min-height:560px;
+    max-height:560px;
+
+    right:50%;
+    transform:translateX(50%);
+    bottom:82px;
+
+    border-radius:30px;
+  }
+
+  .vocaliq-btn{
+    width:64px;
+    height:64px;
+    right:14px;
+    bottom:14px;
+  }
+  .vocaliq-btn img{
+    width: 30px;
+    height: 30px;
+  }
+
+   .vocaliq-title{
+    font-size:26px;
+  }
+
+  .vocaliq-sub{
+    font-size:13px;
+  }
+}
+
+
