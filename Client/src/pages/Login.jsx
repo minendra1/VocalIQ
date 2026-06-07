@@ -61,31 +61,15 @@ function Login({setUser}) {
 
     const handleLogin = async () => {
         try {
-            const result = await signInWithPopup(auth, provider)
-            const { displayName, email } = result.user
-            const res = await axios.post(ServerUrl + "/api/auth/google", { name: displayName, email }, { withCredentials: true })
-            setUser(res.data)
-            toast.success("Login Successfully")
-            navigate("/")
+            const result = await signInWithPopup(auth,provider)
+           const {displayName , email} = result.user
+           const res = await axios.post(ServerUrl + "/api/auth/google" , { name:displayName , email} , {withCredentials:true})
+           setUser(res.data)
+           toast.success("Login Successfully")
+           navigate("/")
         } catch (error) {
-            console.error("Login Error:", error)
-            
-            // Extract meaningful error message
-            let errorMessage = "Login Failed..."
-            
-            if (error.code === 'auth/operation-not-allowed') {
-                errorMessage = "Google sign-in is not enabled. Please contact support."
-            } else if (error.code === 'auth/popup-closed-by-user') {
-                errorMessage = "Sign-in was cancelled."
-            } else if (error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-id-token') {
-                errorMessage = "Invalid authentication. Please try again."
-            } else if (error.message?.includes('redirect_uri_mismatch')) {
-                errorMessage = "OAuth configuration error. Please contact the developer."
-            } else if (error.code) {
-                errorMessage = `Error: ${error.code}`
-            }
-            
-            toast.error(errorMessage)
+            toast.error("Login Failed...")
+            console.log(error)
         }
     }
     return (
