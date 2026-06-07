@@ -18,7 +18,7 @@
 
     link.rel = "stylesheet"
 
-    link.href = "http://localhost:5173/assistant.css"
+    link.href = "https://vocaliq-client.onrender.com/assistant.css"
 
     document.head.appendChild(link)
 
@@ -83,7 +83,7 @@
             <button class="vocaliq-mic">
 
                <img 
-               src="http://localhost:5173/mic.svg"
+               src="https://vocaliq-client.onrender.com/mic.svg"
                alt="mic"
                class="vocaliq-mic-icon"/>
             </button>
@@ -102,7 +102,7 @@
 
     button.innerHTML = `
     <img 
-    src="http://localhost:5173/logo.png"
+    src="https://vocaliq-client.onrender.com/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
