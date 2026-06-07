@@ -56,6 +56,7 @@ const userSchema = new mongoose.Schema({
         "dark",
         "glass",
         "neon",
+        "sunset",
       ],
       default:"dark"
     },

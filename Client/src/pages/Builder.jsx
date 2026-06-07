@@ -9,6 +9,7 @@ const THEMES = [
   "dark",
   "glass",
   "neon",
+  "sunset",
 ];
 
 const TONES = [

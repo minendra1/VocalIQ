@@ -572,6 +572,43 @@ margin-top:18px;
 
 }
 
+/* sunset theme */
+.theme-sunset {
+  background: #1e1b4b;
+  border: 1px solid rgba(244, 63, 94, .18);
+}
+.theme-sunset .vocaliq-overlay {
+  background: radial-gradient(circle at top, rgba(244, 63, 94, .18), transparent 45%);
+}
+.theme-sunset .vocaliq-orb,
+.theme-sunset .vocaliq-orb-glow {
+  background: linear-gradient(135deg, #fb7185, #f97316, #f59e0b);
+}
+.theme-sunset .vocaliq-title {
+  color: #fff7ed;
+}
+.theme-sunset .vocaliq-sub {
+  color: rgba(255, 237, 213, .72);
+}
+.theme-sunset .vocaliq-status {
+  color: #fb7185;
+}
+.theme-sunset .vocaliq-wave span {
+  background: #fb7185;
+}
+.theme-sunset .vocaliq-user-text {
+  color: #fff7ed;
+}
+.theme-sunset .vocaliq-ai-text {
+  color: rgba(255, 237, 213, .75);
+}
+.theme-sunset .vocaliq-mic,
+.theme-sunset.vocaliq-btn {
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  box-shadow: 0 0 38px rgba(244, 63, 94, .45),
+              0 0 100px rgba(249, 115, 22, .32),
+              0 0 160px rgba(244, 63, 94, .20);
+}
 
 
 @media(max-width:640px){
