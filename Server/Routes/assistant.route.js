@@ -1,9 +1,10 @@
 import express from "express"
-import { getAssistantConfig, askAssistant } from "../Controllers/assistant.controller.js"
+import { askAssistant, getAssistantConfig } from "../Controllers/assistant.controller.js"
 
-const router = express.Router()
 
-router.get("/config/:userId", getAssistantConfig)
-router.post("/ask", askAssistant)
+const assistantRouter = express.Router()
 
-export default router
+assistantRouter.get("/config/:userId" , getAssistantConfig)
+assistantRouter.post("/ask",askAssistant)
+
+export default assistantRouter

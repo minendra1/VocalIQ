@@ -1,4 +1,5 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+const Gemini_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent"
+
 
 export const generateGeminiResponse = async ({
     prompt,
@@ -6,42 +7,96 @@ export const generateGeminiResponse = async ({
     user
 }) => {
     try {
+
         if (!apikey) {
             throw new Error("Gemini API key missing")
         }
 
-        // Initialize the Generative AI client
-        const genAI = new GoogleGenerativeAI(apikey);
-        
-        // Get the model
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        
-        // Generate content
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const text = response.text();
+        const response = await fetch(`${Gemini_URL}?key=${apikey}`, {
+            method: "POST",
+            headers: {
+                "Content-Type":
+                    "application/json",
+            },
+            body: JSON.stringify({
+                contents: [
+                    {
+                        parts: [
+                            {
+                                text: prompt
+                            }
+                        ]
+                    }
+                ]
+            })
 
-        if (!text) {
-            throw new Error("No text returned from Gemini")
+        })
+
+        if (!response.ok) {
+
+        // Invalid API Key
+        if (
+          response.status === 400 ||
+          response.status === 401
+        ) {
+
+          user.geminiStatus =
+            "invalid";
+
+          await user.save();
         }
 
-        // Update status only after successful response
-        user.geminiStatus = "active"
-        await user.save()
+        // Quota Exceeded
+        if (
+          response.status === 429
+        ) {
 
-        return text.trim()
+          user.geminiStatus =
+            "quota_exceeded";
+
+          await user.save();
+        }
+
+        const err =
+          await response.text();
+
+        throw new Error(err);
+      }
+
+      // =========================
+      // SUCCESS STATUS
+      // =========================
+
+      user.geminiStatus =
+        "active";
+
+      await user.save();
+
+      const data = await response.json()
+      
+
+      const text = data.candidates?.[0]
+        ?.content?.parts?.[0]
+        ?.text;
+
+         if (!text) {
+
+        throw new Error(
+          "No text returned from Gemini"
+        );
+      }
+
+      return text.trim();
     } catch (error) {
-        console.error("Gemini API Error:", error.message)
-        
-        // Check for specific error codes
-        if (error.message.includes("401") || error.message.includes("API_KEY_INVALID")) {
-            user.geminiStatus = "invalid";
-            await user.save();
-        } else if (error.message.includes("429")) {
-            user.geminiStatus = "quota_exceeded";
-            await user.save();
-        }
-        
-        throw error
+
+         console.error(
+        "Gemini Fetch Error:",
+        error.message
+      );
+
+      throw new Error(
+        "Gemini API fetch failed"
+      );
+
     }
 }

@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from "firebase/auth"
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+      apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "vocaliq-56c24.firebaseapp.com",
   projectId: "vocaliq-56c24",
   storageBucket: "vocaliq-56c24.firebasestorage.app",

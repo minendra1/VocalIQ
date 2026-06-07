@@ -1,6 +1,6 @@
 /* toggle btn */
 
-.vocal-btn{
+.vocaliq-btn{
   position:fixed;
   right:18px;
   bottom:18px;
@@ -16,7 +16,7 @@
   overflow:hidden;
   transition:.3s;
 }
-.vocal-btn img{
+.vocaliq-btn img{
   width:34px;
   height:34px;
   object-fit:contain;
@@ -24,7 +24,7 @@
 
 /* popup */
 
-.vocal-popup{
+.vocaliq-popup{
   position:fixed;
   right:18px;
   bottom:98px;
@@ -48,12 +48,12 @@
 }
 
 
-.vocal-overlay{
+.vocaliq-overlay{
   position:absolute;
   inset:0;
 }
 
-.vocal-content{
+.vocaliq-content{
   position:relative;
   z-index:2;
 
@@ -69,18 +69,18 @@
 }
 
 
-.vocal-top{
+.vocaliq-top{
     width:100%;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-.vocal-orb-wrap{
+.vocaliq-orb-wrap{
   position:relative;
   margin-top:2px;
 }
-.vocal-orb-glow{
+.vocaliq-orb-glow{
 position:absolute;
   inset:0;
   transform:scale(1.8);
@@ -89,7 +89,7 @@ position:absolute;
   opacity:.6;
 }
 
-.vocal-orb{
+.vocaliq-orb{
      position:relative;
   width:118px;
   height:118px;
@@ -112,7 +112,7 @@ position:absolute;
 }
 
 
-.vocal-title{
+.vocaliq-title{
   margin-top:14px;
   font-size:28px;
   line-height:1.1;
@@ -120,19 +120,19 @@ position:absolute;
   text-align:center;
 }
 
-.vocal-sub{
+.vocaliq-sub{
   margin-top:10px;
   font-size:14px;
   line-height:1.6;
   text-align:center;
 }
-.vocal-status{
+.vocaliq-status{
 margin-top:18px;
   font-size:16px;
   font-weight:700;
 }
 
-.vocal-wave{
+.vocaliq-wave{
   margin-top:8px;
   display:flex;
   align-items:flex-end;
@@ -142,34 +142,34 @@ margin-top:18px;
   transition:.3s;
 }
 
-.vocal-wave.active{
+.vocaliq-wave.active{
     opacity: 1;
 }
 
-.vocal-wave span {
+.vocaliq-wave span {
     width:5px;
   border-radius:999px;
   animation:wave 1.2s infinite ease-in-out;
   
 }
 
-.vocal-wave span:nth-child(1){
+.vocaliq-wave span:nth-child(1){
     height: 14px;
 }
 
-.vocal-wave span:nth-child(2){
+.vocaliq-wave span:nth-child(2){
   height:28px;
 }
 
-.vocal-wave span:nth-child(3){
+.vocaliq-wave span:nth-child(3){
   height:16px;
 }
 
-.vocal-wave span:nth-child(4){
+.vocaliq-wave span:nth-child(4){
   height:34px;
 }
 
-.vocal-wave span:nth-child(5){
+.vocaliq-wave span:nth-child(5){
   height:20px;
 }
 
@@ -190,7 +190,7 @@ margin-top:18px;
   }
 }
 
-.vocal-user-text{
+.vocaliq-user-text{
    margin-top:10px;
   min-height:20px;
   font-size:14px;
@@ -199,7 +199,7 @@ margin-top:18px;
   font-weight:600;
 }
 
-.vocal-ai-text{
+.vocaliq-ai-text{
   margin-top:2px;
   min-height:18px;
   font-size:13px;
@@ -208,7 +208,7 @@ margin-top:18px;
   opacity:.82;
 }
 
-.vocal-bottom{
+.vocaliq-bottom{
    position:relative;
   width:130px;
   height:130px;
@@ -217,7 +217,7 @@ margin-top:18px;
   justify-content:center;
 }
 
-.vocal-mic{
+.vocaliq-mic{
   position:relative;
   z-index:2;
 
@@ -241,7 +241,7 @@ margin-top:18px;
   animation:micFloat 2.5s infinite ease-in-out;
 }
 
-.vocal-mic:hover{
+.vocaliq-mic:hover{
   
   transform:scale(1.06);
 }
@@ -261,7 +261,7 @@ margin-top:18px;
   }
 }
 
-.vocal-mic-icon{
+.vocaliq-mic-icon{
    width:30px;
   height:30px;
   object-fit:contain;
@@ -274,7 +274,7 @@ margin-top:18px;
   border:1px solid rgba(255,255,255,.08);
 }
 
-.theme-dark .vocal-overlay{
+.theme-dark .vocaliq-overlay{
   background:
     radial-gradient(
       circle at top,
@@ -283,8 +283,8 @@ margin-top:18px;
     );
 }
 
-.theme-dark .vocal-orb,
-.theme-dark .vocal-orb-glow{
+.theme-dark .vocaliq-orb,
+.theme-dark .vocaliq-orb-glow{
   background:
     linear-gradient(
       135deg,
@@ -294,27 +294,27 @@ margin-top:18px;
     );
 }
 
-.theme-dark .vocal-title{
+.theme-dark .vocaliq-title{
   color:white;
 }
 
-.theme-dark .vocal-sub{
+.theme-dark .vocaliq-sub{
   color:rgba(255,255,255,.68);
 }
 
-.theme-dark .vocal-status{
+.theme-dark .vocaliq-status{
   color:#22e3a6;
 }
 
-.theme-dark .vocal-wave span{
+.theme-dark .vocaliq-wave span{
   background:#22e3a6;
 }
 
-.theme-dark .vocal-user-text{
+.theme-dark .vocaliq-user-text{
   color:white;
 }
 
-.theme-dark .vocal-ai-text{
+.theme-dark .vocaliq-ai-text{
   color:rgba(255,255,255,.72);
 }
 
@@ -322,8 +322,8 @@ margin-top:18px;
    DARK THEME BUTTONS
 ========================= */
 
-.theme-dark .vocal-mic,
-.theme-dark.vocal-btn
+.theme-dark .vocaliq-mic,
+.theme-dark.vocaliq-btn
 {
   background:
     linear-gradient(
@@ -354,7 +354,7 @@ margin-top:18px;
   border:1px solid #dbeafe;
 }
 
-.theme-light .vocal-overlay{
+.theme-light .vocaliq-overlay{
   background:
     radial-gradient(
       circle at top,
@@ -363,8 +363,8 @@ margin-top:18px;
     );
 }
 
-.theme-light .vocal-orb,
-.theme-light .vocal-orb-glow{
+.theme-light .vocaliq-orb,
+.theme-light .vocaliq-orb-glow{
   background:
     linear-gradient(
       135deg,
@@ -374,35 +374,35 @@ margin-top:18px;
     );
 }
 
-.theme-light .vocal-title{
+.theme-light .vocaliq-title{
   color:#081028;
 }
 
-.theme-light .vocal-sub{
+.theme-light .vocaliq-sub{
   color:#475569;
 }
 
-.theme-light .vocal-status{
+.theme-light .vocaliq-status{
   color:#3b82f6;
 }
 
-.theme-light .vocal-wave span{
+.theme-light .vocaliq-wave span{
   background:#60a5fa;
 }
 
-.theme-light .vocal-user-text{
+.theme-light .vocaliq-user-text{
   color:#081028;
 }
 
-.theme-light .vocal-ai-text{
+.theme-light .vocaliq-ai-text{
   color:#475569;
 }
 /* =========================
    LIGHT THEME BUTTONS
 ========================= */
 
-.theme-light .vocal-mic,
-.theme-light.vocal-btn{
+.theme-light .vocaliq-mic,
+.theme-light.vocaliq-btn{
 
   background:
     linear-gradient(
@@ -433,7 +433,7 @@ margin-top:18px;
   border:1px solid rgba(255,255,255,.08);
 }
 
-.theme-glass .vocal-overlay{
+.theme-glass .vocaliq-overlay{
   background:
     radial-gradient(
       circle at top,
@@ -442,8 +442,8 @@ margin-top:18px;
     );
 }
 
-.theme-glass .vocal-orb,
-.theme-glass .vocal-orb-glow{
+.theme-glass .vocaliq-orb,
+.theme-glass .vocaliq-orb-glow{
   background:
     linear-gradient(
       135deg,
@@ -453,35 +453,35 @@ margin-top:18px;
     );
 }
 
-.theme-glass .vocal-title{
+.theme-glass .vocaliq-title{
   color:white;
 }
 
-.theme-glass .vocal-sub{
+.theme-glass .vocaliq-sub{
   color:rgba(255,255,255,.75);
 }
 
-.theme-glass .vocal-status{
+.theme-glass .vocaliq-status{
   color:#a5f3fc;
 }
 
-.theme-glass .vocal-wave span{
+.theme-glass .vocaliq-wave span{
   background:#a5f3fc;
 }
 
-.theme-glass .vocal-user-text{
+.theme-glass .vocaliq-user-text{
   color:white;
 }
 
-.theme-glass .vocal-ai-text{
+.theme-glass .vocaliq-ai-text{
   color:rgba(255,255,255,.72);
 }
 /* =========================
    GLASS THEME BUTTONS
 ========================= */
 
-.theme-glass .vocal-mic,
-.theme-glass.vocal-btn{
+.theme-glass .vocaliq-mic,
+.theme-glass.vocaliq-btn{
 
   background:
     linear-gradient(
@@ -506,7 +506,7 @@ margin-top:18px;
   border:1px solid rgba(16,185,129,.18);
 }
 
-.theme-neon .vocal-overlay{
+.theme-neon .vocaliq-overlay{
   background:
     radial-gradient(
       circle at top,
@@ -515,8 +515,8 @@ margin-top:18px;
     );
 }
 
-.theme-neon .vocal-orb,
-.theme-neon .vocal-orb-glow{
+.theme-neon .vocaliq-orb,
+.theme-neon .vocaliq-orb-glow{
   background:
     linear-gradient(
       135deg,
@@ -526,27 +526,27 @@ margin-top:18px;
     );
 }
 
-.theme-neon .vocal-title{
+.theme-neon .vocaliq-title{
   color:#ecfdf5;
 }
 
-.theme-neon .vocal-sub{
+.theme-neon .vocaliq-sub{
   color:rgba(209,250,229,.72);
 }
 
-.theme-neon .vocal-status{
+.theme-neon .vocaliq-status{
   color:#6ee7b7;
 }
 
-.theme-neon .vocal-wave span{
+.theme-neon .vocaliq-wave span{
   background:#6ee7b7;
 }
 
-.theme-neon .vocal-user-text{
+.theme-neon .vocaliq-user-text{
   color:#ecfdf5;
 }
 
-.theme-neon .vocal-ai-text{
+.theme-neon .vocaliq-ai-text{
   color:rgba(209,250,229,.75);
 }
 
@@ -554,8 +554,8 @@ margin-top:18px;
    NEON THEME BUTTONS
 ========================= */
 
-.theme-neon .vocal-mic,
-.theme-neon.vocal-btn{
+.theme-neon .vocaliq-mic,
+.theme-neon.vocaliq-btn{
 
   background:
     linear-gradient(
@@ -575,7 +575,7 @@ margin-top:18px;
 
 
 @media(max-width:640px){
-  .vocal-popup{
+  .vocaliq-popup{
     width:340px;
     min-width:340px;
     max-width:340px;
@@ -591,22 +591,22 @@ margin-top:18px;
     border-radius:30px;
   }
 
-  .vocal-btn{
+  .vocaliq-btn{
     width:64px;
     height:64px;
     right:14px;
     bottom:14px;
   }
-  .vocal-btn img{
+  .vocaliq-btn img{
     width: 30px;
     height: 30px;
   }
 
-   .vocal-title{
+   .vocaliq-title{
     font-size:26px;
   }
 
-  .vocal-sub{
+  .vocaliq-sub{
     font-size:13px;
   }
 }

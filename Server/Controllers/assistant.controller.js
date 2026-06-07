@@ -42,8 +42,10 @@ export const askAssistant = async (req, res) => {
         }
 
         if (user.plan === "pro" && new Date(user.proExpiresAt) < new Date()) {
-            user.plan = "free"
+            user.plan === "free"
+
             await user.save()
+
             return res.status(400).json({ message: "Pro plan expired" })
         }
 
@@ -168,13 +170,15 @@ ${message}
             });
 
     } catch (error) {
-        console.error("Assistant Error:", error)
 
-        return res.status(500).json({
-            success: false,
-            message: "Assistant AI Error",
-            error: error.message || error.toString()
-        });
+        console.log(error)
+
+        return  res.status(500).json({
+                success: false,
+                message:
+                    "Assistant AI Error",
+            });
+
     }
 }
 

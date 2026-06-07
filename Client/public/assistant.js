@@ -18,11 +18,7 @@
 
     link.rel = "stylesheet"
 
-    // Get the base URL from the script src attribute
-    const scriptSrc = script.src;
-    const baseUrl = scriptSrc.substring(0, scriptSrc.lastIndexOf('/'));
-
-    link.href = baseUrl + "/assistant.css"
+    link.href = "http://localhost:5173/assistant.css"
 
     document.head.appendChild(link)
 
@@ -31,38 +27,38 @@
 
     const popup = document.createElement("div")
 
-    popup.className = `vocal-popup theme-${theme}`
+    popup.className = `vocaliq-popup theme-${theme}`
 
     popup.innerHTML = `
-    <div class="vocal-overlay"></div>
+    <div class="vocaliq-overlay"></div>
 
-    <div class="vocal-content">
+    <div class="vocaliq-content">
 
-       <div class="vocal-top">
-            <div class="vocal-orb-wrap">
+       <div class="vocaliq-top">
+            <div class="vocaliq-orb-wrap">
 
-                <div class="vocal-orb-glow"></div>
+                <div class="vocaliq-orb-glow"></div>
 
-                <div class="vocal-orb"></div>
+                <div class="vocaliq-orb"></div>
 
             </div>
 
-            <h2 class="vocal-title">
-                Hello! I'm VocalIQ AI
+            <h2 class="vocaliq-title">
+                Hello! I'm VocalIQ
             </h2>
 
-            <p class="vocal-sub">
+            <p class="vocaliq-sub">
                 Your smart voice assistant.
                 <br />
                 Ask anything about your website.
             </p>
 
 
-            <div class="vocal-status">
+            <div class="vocaliq-status">
                 Tap button to Speak
             </div>
 
-            <div class="vocal-wave">
+            <div class="vocaliq-wave">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -72,24 +68,24 @@
             </div>
 
             <!-- User Text -->
-            <div class="vocal-user-text">
+            <div class="vocaliq-user-text">
             </div>
 
             <!-- AI Text -->
-            <div class="vocal-ai-text">
+            <div class="vocaliq-ai-text">
             </div>
   
         </div>
 
 
-       <div class="vocal-bottom">
+        <div class="vocaliq-bottom">
             
-            <button class="vocal-mic">
+            <button class="vocaliq-mic">
 
                <img 
-               src="${baseUrl}/mic.svg"
+               src="http://localhost:5173/mic.svg"
                alt="mic"
-               class="vocal-mic-icon"/>
+               class="vocaliq-mic-icon"/>
             </button>
         </div>
     </div>
@@ -102,11 +98,11 @@
 
     const button = document.createElement("button")
 
-    button.className = `vocal-btn theme-${theme}`
+    button.className = `vocaliq-btn theme-${theme}`
 
     button.innerHTML = `
     <img 
-    src="${baseUrl}/logo.png"
+    src="http://localhost:5173/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
@@ -124,14 +120,11 @@
     }
 
 
-    // Determine API base URL - check if we're on a different port
-    const apiUrl = window.VOCAL_API_URL || "http://localhost:8000";
-
     // load Assistant
 
     const loadAssistant = async () => {
         try {
-            const res = await fetch(`${apiUrl}/api/assistant/config/${userId}`)
+            const res = await fetch(`http://localhost:8000/api/assistant/config/${userId}`)
 
             const data = await res.json()
 
@@ -152,15 +145,15 @@
     const applyConfig = () => {
         if (!assistantConfig) return;
 
-        popup.className = `vocal-popup theme-${assistantConfig.theme}`
+        popup.className = `vocaliq-popup theme-${assistantConfig.theme}`
 
-        button.className = `vocal-btn theme-${assistantConfig.theme}`
+        button.className = `vocaliq-btn theme-${assistantConfig.theme}`
 
-        const title = popup.querySelector(".vocal-title")
+        const title = popup.querySelector(".vocaliq-title")
 
         title.innerHTML = `Hello! I'm ${assistantConfig.assistantName}`;
 
-        const subTitle = popup.querySelector(".vocal-sub")
+        const subTitle = popup.querySelector(".vocaliq-sub")
         subTitle.innerHTML = `
     Welcome to
     ${assistantConfig.businessName}.
@@ -179,27 +172,27 @@
 
     const status =
         popup.querySelector(
-            ".vocal-status"
+            ".vocaliq-status"
         );
 
     const wave =
         popup.querySelector(
-            ".vocal-wave"
+            ".vocaliq-wave"
         );
 
     const userText =
         popup.querySelector(
-            ".vocal-user-text"
+            ".vocaliq-user-text"
         );
 
     const aiText =
         popup.querySelector(
-            ".vocal-ai-text"
+            ".vocaliq-ai-text"
         );
 
     const mic =
         popup.querySelector(
-            ".vocal-mic"
+            ".vocaliq-mic"
         );
 
 
@@ -291,7 +284,7 @@
                 status.innerText = "Thinking...";
                 
 
-                const res = await fetch(`${apiUrl}/api/assistant/ask` , {
+                const res = await fetch("http://localhost:8000/api/assistant/ask" , {
                     method:"POST",
                     headers:{
                         "Content-Type":
@@ -321,7 +314,7 @@
                     }
 
                 }else{
-                    speak(data.message || "Response Error please Check your plan")
+                    speak("Response Error please Check your plan")
 
                 }
 
