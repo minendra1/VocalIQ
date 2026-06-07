@@ -38,7 +38,7 @@ function Navbar({user , setUser}) {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between'>
 
         <div onClick={()=>navigate("/")} className='flex items-center gap-2.5 cursor-pointer'>
-          <img src={logo} alt="logo" className='h-9 w-auto object-contain' />
+          <img src={logo} alt="logo" className='h-15 w-auto object-contain' />
           <h1 className='font-bold text-xl text-gray-700 dark:text-white leading-none'>
             Vocal<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-emerald-500'>IQ</span>
           </h1>
