@@ -18,7 +18,11 @@
 
     link.rel = "stylesheet"
 
-    link.href = "http://localhost:5173/assistant.css"
+    // Get the base URL from the script src attribute
+    const scriptSrc = script.src;
+    const baseUrl = scriptSrc.substring(0, scriptSrc.lastIndexOf('/'));
+
+    link.href = baseUrl + "/assistant.css"
 
     document.head.appendChild(link)
 
@@ -78,12 +82,12 @@
         </div>
 
 
-        <div class="vocal-bottom">
+       <div class="vocal-bottom">
             
             <button class="vocal-mic">
 
                <img 
-               src="http://localhost:5173/mic.svg"
+               src="${baseUrl}/mic.svg"
                alt="mic"
                class="vocal-mic-icon"/>
             </button>
@@ -102,7 +106,7 @@
 
     button.innerHTML = `
     <img 
-    src="http://localhost:5173/logo.png"
+    src="${baseUrl}/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
@@ -120,11 +124,14 @@
     }
 
 
+    // Determine API base URL - check if we're on a different port
+    const apiUrl = window.VOCAL_API_URL || "http://localhost:8000";
+
     // load Assistant
 
     const loadAssistant = async () => {
         try {
-            const res = await fetch(`http://localhost:8000/api/assistant/config/${userId}`)
+            const res = await fetch(`${apiUrl}/api/assistant/config/${userId}`)
 
             const data = await res.json()
 
@@ -284,7 +291,7 @@
                 status.innerText = "Thinking...";
                 
 
-                const res = await fetch("http://localhost:8000/api/assistant/ask" , {
+                const res = await fetch(`${apiUrl}/api/assistant/ask` , {
                     method:"POST",
                     headers:{
                         "Content-Type":

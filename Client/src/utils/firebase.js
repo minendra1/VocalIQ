@@ -6,7 +6,7 @@ const firebaseConfig = {
   projectId: "vocaliq-56c24",
   storageBucket: "vocaliq-56c24.firebasestorage.app",
   messagingSenderId: "485444484883",
-  appId: "1:485444484883:web:29723ac0d53db40981a4e6",
+  appId: "1:485444484883:web:29723ac0d53db40981a4e6"
 };
 
 // Initialize Firebase
