@@ -20,7 +20,7 @@ export const googleAuth = async (req,res) => {
             httpOnly:true,
             secure:false,
             sameSite:"strict",
-            maxAge: 10 * 24 * 60 * 60 * 1000
+            maxAge: 7 * 24 * 60 * 60 * 1000
         } )
 
         return res.status(200).json(user)
@@ -37,7 +37,7 @@ export const logOut = async (req,res) => {
             secure:false,
             sameSite:"strict"
         })
-         return res.status(200).json({message:"LogOut Successfully"})
+         return res.status(200).json({message:"LogOut Sucessfully"})
     } catch (error) {
          return res.status(500).json({message:`LogOut Failed ${error}`})
     }

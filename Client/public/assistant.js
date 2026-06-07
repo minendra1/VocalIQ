@@ -27,38 +27,38 @@
 
     const popup = document.createElement("div")
 
-    popup.className = `VocalIQ-popup theme-${theme}`
+    popup.className = `vocal-popup theme-${theme}`
 
     popup.innerHTML = `
-    <div class="VocalIQ-overlay"></div>
+    <div class="vocal-overlay"></div>
 
-    <div class="VocalIQ-content">
+    <div class="vocal-content">
 
-       <div class="VocalIQ-top">
-            <div class="VocalIQ-orb-wrap">
+       <div class="vocal-top">
+            <div class="vocal-orb-wrap">
 
-                <div class="VocalIQ-orb-glow"></div>
+                <div class="vocal-orb-glow"></div>
 
-                <div class="VocalIQ-orb"></div>
+                <div class="vocal-orb"></div>
 
             </div>
 
-            <h2 class="VocalIQ-title">
-                Hello! I'm Vocal IQ
+            <h2 class="vocal-title">
+                Hello! I'm VocalIQ AI
             </h2>
 
-            <p class="VocalIQ-sub">
+            <p class="vocal-sub">
                 Your smart voice assistant.
                 <br />
                 Ask anything about your website.
             </p>
 
 
-            <div class="VocalIQ-status">
+            <div class="vocal-status">
                 Tap button to Speak
             </div>
 
-            <div class="VocalIQ-wave">
+            <div class="vocal-wave">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -68,24 +68,24 @@
             </div>
 
             <!-- User Text -->
-            <div class="VocalIQ-user-text">
+            <div class="vocal-user-text">
             </div>
 
             <!-- AI Text -->
-            <div class="Vocal-IQ-text">
+            <div class="vocal-ai-text">
             </div>
   
         </div>
 
 
-        <div class="VocalIQ-bottom">
+        <div class="vocal-bottom">
             
-            <button class="VocalIQ-mic">
+            <button class="vocal-mic">
 
                <img 
                src="http://localhost:5173/mic.svg"
                alt="mic"
-               class="VocalIQ-mic-icon"/>
+               class="vocal-mic-icon"/>
             </button>
         </div>
     </div>
@@ -98,7 +98,7 @@
 
     const button = document.createElement("button")
 
-    button.className = `VocalIQ-btn theme-${theme}`
+    button.className = `vocal-btn theme-${theme}`
 
     button.innerHTML = `
     <img 
@@ -145,15 +145,15 @@
     const applyConfig = () => {
         if (!assistantConfig) return;
 
-        popup.className = `VocalIQ-popup theme-${assistantConfig.theme}`
+        popup.className = `vocal-popup theme-${assistantConfig.theme}`
 
-        button.className = `VocalIQ-btn theme-${assistantConfig.theme}`
+        button.className = `vocal-btn theme-${assistantConfig.theme}`
 
-        const title = popup.querySelector(".VocalIQ-title")
+        const title = popup.querySelector(".vocal-title")
 
         title.innerHTML = `Hello! I'm ${assistantConfig.assistantName}`;
 
-        const subTitle = popup.querySelector(".VocalIQ-sub")
+        const subTitle = popup.querySelector(".vocal-sub")
         subTitle.innerHTML = `
     Welcome to
     ${assistantConfig.businessName}.
@@ -172,27 +172,27 @@
 
     const status =
         popup.querySelector(
-            ".VocalIQ-status"
+            ".vocal-status"
         );
 
     const wave =
         popup.querySelector(
-            ".VocalIQ-wave"
+            ".vocal-wave"
         );
 
     const userText =
         popup.querySelector(
-            ".VocalIQ-user-text"
+            ".vocal-user-text"
         );
 
     const aiText =
         popup.querySelector(
-            ".VocalIQ-ai-text"
+            ".vocal-ai-text"
         );
 
     const mic =
         popup.querySelector(
-            ".VocalIQ-mic"
+            ".vocal-mic"
         );
 
 
@@ -314,7 +314,7 @@
                     }
 
                 }else{
-                    speak("Response Error please Check your plan")
+                    speak(data.message || "Response Error please Check your plan")
 
                 }
 
